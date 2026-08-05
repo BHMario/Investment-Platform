@@ -1,0 +1,31 @@
+---
+title: Tokens
+---
+
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Design/Tokens" />
+
+# Tokens
+
+Los tokens principales están definidos en `src/design/tokens.css` y `tokens.ts`.
+
+## Colores primarios
+
+<div style={{display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap'}}>
+  <div style={{width: 120, padding: 12, background: 'var(--color-primary-50)'}}>Primary 50</div>
+  <div style={{width: 120, padding: 12, background: 'var(--color-primary-100)'}}>Primary 100</div>
+  <div style={{width: 120, padding: 12, background: 'var(--color-primary-200)'}}>Primary 200</div>
+  <div style={{width: 120, padding: 12, background: 'var(--color-primary-500)', color: 'white'}}>Primary 500</div>
+</div>
+
+## Semánticos
+
+- Success: `--color-success-500`
+- Warning: `--color-warning-500`
+- Danger: `--color-danger-500`
+
+## Tipografía
+
+- Font family: Inter (variable)
+- Font sizes: `--font-size-sm`, `--font-size-base`, `--font-size-lg`
