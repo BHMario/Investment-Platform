@@ -1,4 +1,4 @@
-import db from './mysql'
+import db, { initializeDatabase } from './mysql'
 
 type MarketInstrument = {
   ticker: string
@@ -28,6 +28,7 @@ async function fetchLiveQuote(ticker: string) {
 }
 
 export async function getMarketInstruments(useLive: boolean) {
+  await initializeDatabase()
   const [rows] = await db.query(MARKET_QUERY)
   const instruments = Array.isArray(rows) ? (rows as MarketInstrument[]) : []
 

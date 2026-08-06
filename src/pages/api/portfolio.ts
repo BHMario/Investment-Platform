@@ -1,9 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import db from '../../lib/mysql'
+import db, { initializeDatabase } from '../../lib/mysql'
 import { fallbackPortfolios } from '../../lib/demoData'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
+    await initializeDatabase()
     const [rows] = await db.query('SELECT id, name, value, performance, assets_count FROM portfolios LIMIT 20')
     const portfolios = Array.isArray(rows) ? rows : []
     res.status(200).json(portfolios)
